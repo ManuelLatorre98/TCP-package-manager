@@ -19,8 +19,10 @@ The internal operating protocol is as follows:
 2. Firstly, it receives the length of the message sent by the server (4 bytes in little-endian), thus knowing the length of the next message to receive.
 3. It receives the message sent by the server and decodes it. As many messages can arrive together in a single packet, an array of messages is returned.
 
+
 ![image](https://github.com/ManuelLatorre98/TCP-package-manager/assets/71223620/f9e3facf-1d62-49aa-9475-5039180c2fc5)
 
+## Repo link: [https://github.com/ManuelLatorre98/TCP-package-manager](https://github.com/ManuelLatorre98/TCP-package-manager)
 # Methods
 ## Server side
 * ***PackageManager.sendMessage(socket, msg:string): Promise<ApiResponse>***: Receives a socket and the message and sends it to the client
