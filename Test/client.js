@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var PackageManager_1 = require("../src/PackageManager");
+var PackageManager_1 = require("./TCP_PackageManager/PackageManager");
 var net = require("net");
 var client = new net.Socket();
 var PORT = 3000;

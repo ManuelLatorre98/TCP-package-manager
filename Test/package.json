@@ -9,6 +9,6 @@
     "@types/node": "^20.11.30"
   },
   "dependencies": {
-    "tcp-package-manager": "^1.0.0"
+    "tcp-package-manager": "^1.0.1"
   }
 }

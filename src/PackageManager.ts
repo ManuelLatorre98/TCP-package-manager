@@ -13,10 +13,6 @@ export class PackageManager {
   private subArrayLengthBytes: Buffer | null = null
   private lengthReaded= 0
 
-  constructor() {
-    this.msgPointer = 0
-  }
-
   /**
    * Handles the received data, either in string or buffer format.
    * If a string is received, it converts it to Buffer in UTF-8 format.
