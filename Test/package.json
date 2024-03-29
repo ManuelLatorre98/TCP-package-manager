@@ -1,11 +1,14 @@
 {
   "name": "TCP-package-manager",
-  "version": "1.0.0",
-  "main" : "index.ts",
+  "version": "1.0.2",
+  "main": "index.ts",
   "scripts": {
-    "dev": "node server.ts" 
+    "dev": "node server.ts"
   },
   "devDependencies": {
     "@types/node": "^20.11.30"
+  },
+  "dependencies": {
+    "tcp-package-manager": "^1.0.0"
   }
 }

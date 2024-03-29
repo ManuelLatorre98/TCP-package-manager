@@ -1,4 +1,4 @@
-import { PackageManager } from "../src/PackageManager";
+
 import * as net from 'net';
 const dataManager: PackageManager = new PackageManager();
 const server = net.createServer((socket: any) => {
