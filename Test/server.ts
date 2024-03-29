@@ -1,6 +1,7 @@
 
 import * as net from 'net';
-import { PackageManager } from './TCP_PackageManager/PackageManager';
+import { PackageManager } from '../src/PackageManager';
+
 const dataManager: PackageManager = new PackageManager();
 const server = net.createServer((socket: any) => {
   console.log('New client connected');

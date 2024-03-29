@@ -37,7 +37,6 @@ var PackageManager = /** @class */ (function () {
             }
             return messageBytes;
         };
-        this.msgPointer = 0;
     }
     /**
      * Handles the received data, either in string or buffer format.

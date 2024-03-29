@@ -37,7 +37,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var net = require("net");
-var PackageManager_1 = require("./TCP_PackageManager/PackageManager");
+var PackageManager_1 = require("../src/PackageManager");
 var dataManager = new PackageManager_1.PackageManager();
 var server = net.createServer(function (socket) {
     console.log('New client connected');

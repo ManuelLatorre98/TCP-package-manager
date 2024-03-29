@@ -1,4 +1,4 @@
-import { PackageManager } from './TCP_PackageManager/PackageManager';
+import { PackageManager } from '../src/PackageManager';
 import * as net from 'net';
 
 const client = new net.Socket();
