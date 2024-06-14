@@ -1,6 +1,6 @@
 # TCP-PackageManager
 
-TCP-PackageManager is a TypeScript library designed to facilitate sending and receiving TCP messages. Its main goal is to ensure smooth communication across various devices, making it especially suitable for mobile applications. By using little-endian encoding when sending data, TCP-PackageManager ensures compatibility and reliability in message transmission, regardless of the target platform or device architecture.
+TCP-PackageManager is a TypeScript library designed to facilitate sending and receiving TCP messages. Its main goal is to ensure smooth communication across various devices, making it especially suitable for mobile applications. By using big-endian encoding when sending data, TCP-PackageManager ensures compatibility and reliability in message transmission, regardless of the target platform or device architecture.
 
 The key feature of TCP-PackageManager is its ability to handle message packaging on the client side, simplifying the process of unpacking and interpreting incoming data. This functionality streamlines message management and improves the efficiency of TCP communication within applications.
 
@@ -11,16 +11,15 @@ The internal operating protocol is as follows:
 
 ## Server Side
 1. TCP-PackageManager receives the message (of type string) to be transmitted as a parameter.
-2. It calculates and sends the length of the message in bytes to the client. If necessary, it performs a conversion to little-endian to ensure that the byte order is always the same regardless of the device or architecture used (always 4 bytes). By calculating in bytes rather than characters, there is no need to worry about the use of "special" characters such as accents, the letter "ñ", kanji, etc., which often have a length greater than one byte.
+2. It calculates and sends the length of the message in bytes to the client. If necessary, it performs a conversion to big-endian to ensure that the byte order is always the same regardless of the device or architecture used (always 4 bytes). By calculating in bytes rather than characters, there is no need to worry about the use of "special" characters such as accents, the letter "ñ", kanji, etc., which often have a length greater than one byte.
 3. It sends the message to the client.
 
 ## Client Side
 1. TCP-PackageManager receives the received message as a parameter (string or Buffer type).
-2. Firstly, it receives the length of the message sent by the server (4 bytes in little-endian), thus knowing the length of the next message to receive.
+2. Firstly, it receives the length of the message sent by the server (4 bytes in big-endian), thus knowing the length of the next message to receive.
 3. It receives the message sent by the server and decodes it. As many messages can arrive together in a single packet, an array of messages is returned.
 
-
-![image](https://github.com/ManuelLatorre98/TCP-package-manager/assets/71223620/f9e3facf-1d62-49aa-9475-5039180c2fc5)
+![EnvioPackageManager](https://github.com/ManuelLatorre98/TCP-package-manager/assets/71223620/36b35181-1466-4ad4-b326-1d424043cba6)
 
 ## Repo link: [https://github.com/ManuelLatorre98/TCP-package-manager](https://github.com/ManuelLatorre98/TCP-package-manager)
 # Methods
