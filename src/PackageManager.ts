@@ -1,4 +1,4 @@
-import {fromLittleEndian, toLittleEndian} from "./toLittleEndian";
+import {fromBigEndian, toBigEndian} from "./toBigEndian";
 import {ApiResponse} from "./customTypes";
 global.Buffer = require('buffer').Buffer;
 
@@ -68,7 +68,7 @@ export class PackageManager {
     /* If finished reading the message length, it translates it */
     if (this.lengthReaded == this.amountOfBytes) {
       this.lengthReaded = 0
-      this.messageLength = fromLittleEndian(this.lengthBytes);
+      this.messageLength = fromBigEndian(this.lengthBytes);
     }
   }
 
@@ -160,8 +160,8 @@ export class PackageManager {
     return new Promise((resolve, reject)=>{
       try {
         const dataToSend = JSON.stringify(message)
-        const littleEndian = toLittleEndian(new Blob([dataToSend]).size);
-        socket.write(littleEndian) //This shall use the method to send message provided by the TCP library. I asume that is socket.write 
+        const bigEndian = toBigEndian(new Blob([dataToSend]).size);
+        socket.write(bigEndian) //This shall use the method to send message provided by the TCP library. I asume that is socket.write 
         socket.write(dataToSend)
         resolve(new ApiResponse(200, "Message sended to client"))
       }catch(e){

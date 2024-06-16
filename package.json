@@ -1,6 +1,6 @@
 {
   "name": "tcp-package-manager",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Send and receive packaged messages in TCP",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
